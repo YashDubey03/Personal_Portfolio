@@ -32,12 +32,6 @@ export const Banner = () => {
                     building scalable, real-world applications and continuously
                     improving my development skills through hands-on projects.
                   </p>
-
-                  <a
-                    href="/YashResume.pdf"
-                    download
-                    style={{ textDecoration: "none" }}
-                  ></a>
                 </div>
               )}
             </TrackVisibility>
@@ -67,9 +61,11 @@ export const Banner = () => {
             </TrackVisibility>
           </Col>
         </Row>
-        <button style={{ border: "1px solid", padding: "1rem 1rem" }}>
-          Download Resume
-        </button>
+        <a href="/YashResume.pdf" download style={{ textDecoration: "none" }}>
+          <button style={{ border: "1px solid", padding: "1rem 1rem" }}>
+            Download Resume
+          </button>
+        </a>
       </Container>
     </section>
   );
