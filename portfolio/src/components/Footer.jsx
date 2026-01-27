@@ -1,32 +1,53 @@
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import { MailchimpForm } from "./MailchimpForm";
-import logo from "../assets/img/logo.svg";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 export const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <Row className="align-items-center">
-          {/* <MailchimpForm /> */}
-          <Col size={12} sm={6}>
-            <img src={logo} alt="Logo" />
+        <Row className="align-items-center footer-main">
+          {/* Left */}
+          <Col md={6} className="text-center text-md-start mb-4 mb-md-0">
+            <h4 className="footer-title">Yash Dubey</h4>
+            <p className="footer-text">
+              MERN Stack Developer | React Enthusiast
+            </p>
           </Col>
-          <Col size={12} sm={6} className="text-center text-sm-end">
-            <div className="social-icon">
-              <a href="#">
-                <img src={navIcon1} alt="Icon" />
+
+          {/* Right */}
+          <Col md={6} className="text-center text-md-end">
+            <div className="footer-contact">
+              <p>
+                <FaEnvelope /> yashvardhandubey83@gmail.com
+              </p>
+              <p>
+                <FaPhoneAlt /> +91 7415404969
+              </p>
+            </div>
+
+            <div className="footer-social">
+              <a
+                href="https://www.linkedin.com/in/yashvardhan-dubey-473190266/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedinIn />
               </a>
-              <a href="#">
-                <img src={navIcon2} alt="Icon" />
-              </a>
-              <a href="#">
-                <img src={navIcon3} alt="Icon" />
+              <a
+                href="https://github.com/YashDubey03"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub />
               </a>
             </div>
-            <p>Copyright 2022. All Rights Reserved</p>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="text-center mt-4">
+            <p className="copyright">© 2026 Yash Dubey. All Rights Reserved.</p>
           </Col>
         </Row>
       </Container>

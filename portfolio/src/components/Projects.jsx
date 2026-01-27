@@ -14,16 +14,22 @@ export const Projects = () => {
       title: "Note Saver",
       imgUrl: NoteSaver,
       link: "https://note-saver-chi.vercel.app/",
+      description:
+        "A React based Note saver web application which will save and manage notes on the local storage ",
     },
     {
       title: "Crypto Tracker",
       imgUrl: CryptoTracker,
       link: "https://crypto-tracker-omega-lake.vercel.app/",
+      description:
+        "A React based crypto tracker which will track and anlyze crypto coins data  ",
     },
     {
       title: "Chat App",
       imgUrl: ChatApp,
       link: "https://chat-app-frontend-seven-ashy.vercel.app/",
+      description:
+        "A real-time chat application using MERN stack and Socket.io",
     },
     // {
     //   title: "Portfolio Website",
@@ -34,6 +40,8 @@ export const Projects = () => {
       title: "Fashion Ecommerce",
       imgUrl: FashionWebsite,
       link: "https://fashion-ecommerce-snowy.vercel.app/",
+      description:
+        "A modern fashion e-commerce website built with MERN stack and Stripe integration for payments.",
     },
   ];
 
