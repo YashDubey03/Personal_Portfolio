@@ -1,0 +1,42 @@
+# Node dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Runtime / process files
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables (DB passwords, API keys)
+.env
+.env.local
+.env.*.local
+
+# Build output (agar use karte ho)
+dist/
+build/
+tmp/
+out/
+
+# MongoDB local database files (agar local use ho raha ho)
+*.db
+*.sqlite
+
+# Uploaded files / media (agar koi file upload feature hai)
+uploads/
+media/
+
+# Editor / IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
