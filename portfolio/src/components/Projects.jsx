@@ -23,7 +23,7 @@ export const Projects = () => {
     {
       title: "Chat App",
       imgUrl: ChatApp,
-      link: "https://chat-app-frontend-seven-ashy.vercel.app/login",
+      link: "https://chat-app-frontend-seven-ashy.vercel.app/",
     },
     // {
     //   title: "Portfolio Website",
