@@ -43,7 +43,12 @@ export const Banner = () => {
             </TrackVisibility>
           </Col>
 
-          <Col xs={12} md={6} xl={5}>
+          <Col
+            xs={12}
+            md={6}
+            xl={5}
+            className="d-none d-md-flex justify-content-center"
+          >
             <TrackVisibility>
               {({ isVisible }) => (
                 <div>

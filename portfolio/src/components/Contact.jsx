@@ -5,6 +5,8 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 export const Contact = () => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
   const formInitialDetails = {
     firstName: "",
     lastName: "",
@@ -26,18 +28,19 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch(`${BACKEND_URL}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify(formDetails),
     });
+
     setButtonText("Send");
     let result = await response.json();
     setFormDetails(formInitialDetails);
     if (result.code == 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
+      setStatus({ success: true, message: "Message sent successfully" });
     } else {
       setStatus({
         succes: false,
@@ -87,7 +90,7 @@ export const Contact = () => {
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
-                          value={formDetails.lasttName}
+                          value={formDetails.lastName}
                           placeholder="Last Name"
                           onChange={(e) =>
                             onFormUpdate("lastName", e.target.value)
