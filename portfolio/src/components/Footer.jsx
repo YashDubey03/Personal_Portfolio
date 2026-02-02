@@ -9,7 +9,7 @@ export const Footer = () => {
         <Row className="align-items-center footer-main">
           {/* Left */}
           <Col md={6} className="text-center text-md-start mb-4 mb-md-0">
-            <h4 className="footer-title">Yash Dubey</h4>
+            <h4 className="footer-title">Yashvardhan Dubey</h4>
             <p className="footer-text">
               MERN Stack Developer | React Enthusiast
             </p>
