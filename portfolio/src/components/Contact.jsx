@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import axios from "axios";
 
 export const Contact = () => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -28,24 +29,32 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch(`${BACKEND_URL}/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
 
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ success: true, message: "Message sent successfully" });
-    } else {
-      setStatus({
-        succes: false,
-        message: "Something went wrong, please try again later.",
+    try {
+      const response = await axios.post(`${BACKEND_URL}/contact`, formDetails, {
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
+
+      setButtonText("Send");
+      setFormDetails(formInitialDetails);
+
+      if (response.data.code === 200) {
+        setStatus({ success: true, message: "Message sent successfully" });
+      } else {
+        setStatus({
+          success: false,
+          message: "Something went wrong, please try again later.",
+        });
+      }
+    } catch (error) {
+      setButtonText("Send");
+      setStatus({
+        success: false,
+        message: "Error sending message. Please try again later.",
+      });
+      console.error(error);
     }
   };
 
