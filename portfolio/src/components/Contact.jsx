@@ -31,15 +31,11 @@ export const Contact = () => {
     setButtonText("Sending...");
 
     try {
-      const response = await axios.post(
-        "https://personal-portfolio-two-dusky-33.vercel.app/contact",
-        formDetails,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
+      const response = await axios.post(`${BACKEND_URL}/contact`, formDetails, {
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+      });
 
       setButtonText("Send");
       setFormDetails(formInitialDetails);
